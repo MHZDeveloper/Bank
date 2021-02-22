@@ -18,11 +18,6 @@ public class BankAccountController {
         this.bankAccountService = bankAccountService;
     }
 
-    @GetMapping("/api/bankaccounts")
-    public List<BankAccount> loadAllBankAccounts(){
-        return bankAccountService.loadAllBankAccounts();
-    }
-
     @GetMapping("/api/bankaccounts/{id}")
     public BankAccount loadBankAccount(@PathVariable Long id){
         return bankAccountService.loadBankAccount(id);

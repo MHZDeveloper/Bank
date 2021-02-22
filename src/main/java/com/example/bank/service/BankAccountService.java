@@ -18,10 +18,6 @@ public class BankAccountService {
         this.bankAccountRepository = bankAccountRepository;
     }
 
-    public List<BankAccount> loadAllBankAccounts(){
-        return bankAccountRepository.findAll();
-    }
-
     public BankAccount loadBankAccount(Long id){
         return bankAccountRepository.findById(id)
                 .orElseThrow(() -> new BankAccountNotFoundException("Account ID not available !!"));
