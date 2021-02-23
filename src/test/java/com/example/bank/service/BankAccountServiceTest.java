@@ -19,9 +19,9 @@ class BankAccountServiceTest {
         Mockito.doReturn(Optional.empty()).when(bankAccountRepository).findById(2L);
 
         //when & then
-        Assertions.assertThatThrownBy(() -> {
-            bankAccountService.loadBankAccount(2L);
-        }).isInstanceOf(BankAccountNotFoundException.class)
+        Assertions
+                .assertThatThrownBy(() -> bankAccountService.loadBankAccount(2L))
+                .isInstanceOf(BankAccountNotFoundException.class)
                 .hasMessage("Account ID not available !!");
     }
 }

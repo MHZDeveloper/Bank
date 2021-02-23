@@ -5,13 +5,11 @@ import com.example.bank.service.BankAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
-
 @RestController
+@RequestMapping("/api/bankaccounts")
 public class BankAccountController {
 
-    private BankAccountService bankAccountService;
+    private final BankAccountService bankAccountService;
 
     @Autowired
     public BankAccountController(BankAccountService bankAccountService) {
@@ -23,17 +21,17 @@ public class BankAccountController {
         return bankAccountService.loadBankAccount(id);
     }
 
-    @PostMapping("/api/bankaccounts/{amount}")
+    @PostMapping("/{amount}")
     public BankAccount createBankAccount(@PathVariable double amount){
         return bankAccountService.createBankAccount(amount);
     }
 
-    @PutMapping("/api/bankaccounts/{id}/deposit/{amount}")
+    @PutMapping("/{id}/deposit/{amount}")
     public BankAccount depositBankAccount(@PathVariable Long id, @PathVariable double amount){
         return bankAccountService.deposit(id,amount);
     }
 
-    @PutMapping("/api/bankaccounts/{id}/withdraw/{amount}")
+    @PutMapping("/{id}/withdraw/{amount}")
     public BankAccount withdrawBankAccount(@PathVariable Long id, @PathVariable double amount){
         return bankAccountService.withdraw(id,amount);
     }
