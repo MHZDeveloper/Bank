@@ -19,5 +19,7 @@ Below, you'll find the steps to clone the project on your pc
  $ cd Bank
  $ mvn spring-boot:run
 ```
+Then browse to [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
-Enjoy !!
+
+Enjoy !! :)

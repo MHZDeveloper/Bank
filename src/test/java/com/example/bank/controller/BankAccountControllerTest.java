@@ -1,6 +1,5 @@
 package com.example.bank.controller;
 
-import com.example.bank.domain.BankAccount;
 import com.example.bank.repositories.BankAccountRepository;
 import io.restassured.RestAssured;
 import org.assertj.core.api.Assertions;
@@ -10,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.when;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class BankAccountControllerTest {
