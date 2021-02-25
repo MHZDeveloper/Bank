@@ -19,7 +19,9 @@ Below, you'll find the steps to clone the project on your pc
  $ cd Bank
  $ mvn spring-boot:run
 ```
-Then browse to [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+Then browse to [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html).
+
+PS : you can also browse to [http://localhost:8080/actuator](http://localhost:8080/actuator) to see the endpoint metrics.
 
 
 Enjoy !! :)
