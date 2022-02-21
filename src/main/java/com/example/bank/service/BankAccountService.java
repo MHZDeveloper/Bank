@@ -6,8 +6,6 @@ import com.example.bank.repositories.BankAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class BankAccountService {
 
@@ -26,20 +24,16 @@ public class BankAccountService {
     public BankAccount deposit(Long id, double amount){
         BankAccount bankAccount = loadBankAccount(id);
         bankAccount.deposit(amount);
-        bankAccountRepository.save(bankAccount);
-        return bankAccount;
+        return bankAccountRepository.save(bankAccount);
     }
 
     public BankAccount withdraw(Long id, double amount){
         BankAccount bankAccount = loadBankAccount(id);
         bankAccount.withdraw(amount);
-        bankAccountRepository.save(bankAccount);
-        return bankAccount;
+        return bankAccountRepository.save(bankAccount);
     }
 
     public BankAccount createBankAccount(double amount){
-        BankAccount bankAccount = new BankAccount(amount);
-        bankAccountRepository.save(bankAccount);
-        return bankAccount;
+        return bankAccountRepository.save(new BankAccount(amount));
     }
 }

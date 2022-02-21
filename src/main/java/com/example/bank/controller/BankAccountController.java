@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/bankaccounts")
+@RequestMapping("/api/bank-account")
 public class BankAccountController {
 
     private final BankAccountService bankAccountService;
@@ -16,7 +16,7 @@ public class BankAccountController {
         this.bankAccountService = bankAccountService;
     }
 
-    @GetMapping("/api/bankaccounts/{id}")
+    @GetMapping("/{id}")
     public BankAccount loadBankAccount(@PathVariable Long id){
         return bankAccountService.loadBankAccount(id);
     }

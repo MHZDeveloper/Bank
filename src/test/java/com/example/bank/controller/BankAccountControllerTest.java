@@ -28,7 +28,7 @@ class BankAccountControllerTest {
     @Test
     void should_return_bank_account() {
         when()
-                .post("/api/bankaccounts/500")
+                .post("/api/bank-account/500")
                 .then()
                 .statusCode(200);
 
