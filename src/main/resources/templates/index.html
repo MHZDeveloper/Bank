@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank</title>
+</head>
+<body>
+    <h1>Bank accounts</h1>
+    <table th:if="${!bankAccounts.isEmpty()}">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Balance</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="bankAccount : ${bankAccounts}">
+                <td th:text="${bankAccount.id}"></td>
+                <td th:text="${bankAccount.balance}"></td>
+                <td><a th:href="@{/deposit/{id}(id=${bankAccount.id})}">deposit</a></td>
+                <td><a th:href="@{/withdraw/{id}(id=${bankAccount.id})}">withdraw</a></td>
+                <td><a th:href="@{/delete/{id}(id=${bankAccount.id})}">delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <div th:if="${bankAccounts.isEmpty()}">
+        No Bank Accounts
+    </div>
+    <br>
+    <a href="/add">Create Bank Account</a>
+</body>
+</html>

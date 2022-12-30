@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+    <h2>Bank Account</h2>
+    <form action="#" th:action="@{/add}" th:object="${amount}" method="post">
+        <div>
+            <label>Amount</label>
+            <input type="number" th:field="*{amount}">
+        </div>
+        <div>
+            <input type="submit" value="Create">
+        </div>
+    </form>
+</body>
+</html>
