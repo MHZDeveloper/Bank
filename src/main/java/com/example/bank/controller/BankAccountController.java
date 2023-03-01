@@ -2,7 +2,6 @@ package com.example.bank.controller;
 
 import com.example.bank.domain.BankAccount;
 import com.example.bank.service.BankAccountService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,7 +10,6 @@ public class BankAccountController {
 
     private final BankAccountService bankAccountService;
 
-    @Autowired
     public BankAccountController(BankAccountService bankAccountService) {
         this.bankAccountService = bankAccountService;
     }
