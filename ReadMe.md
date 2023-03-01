@@ -9,7 +9,7 @@ the presentation of this session.
 
 Building this project requires the following tools:
 * Git (obviously)
-* JDK 8 (Oracle's JDK or OpenJDK recommended)
+* JDK 11
 * Maven 3.3.9
 
 Below, you'll find the steps to clone the project on your pc 
@@ -19,7 +19,11 @@ Below, you'll find the steps to clone the project on your pc
  $ cd Bank
  $ mvn spring-boot:run
 ```
-Then browse to [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html).
+Use postman to trigger API endpoints :
+* POST : http://localhost:8080/api/bank-account/{amount}
+* GET : http://localhost:8080/api/bank-account/{id}
+* PUT : http://localhost:8080/api/bank-account/{id}/deposit/{amount}
+* PUT : http://localhost:8080/api/bank-account/{id}/withdraw/{amount}
 
 PS : you can also browse to [http://localhost:8080/actuator](http://localhost:8080/actuator) to see the endpoint metrics.
 
